@@ -1,13 +1,11 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-    "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
-        <title>Esempio</title>
+        <title>No</title>
     </head>
     <body>
 
         <?php 
-            echo "Ciao, sono uno script PHP!"; 
+            echo "No by consuela!"; 
         ?>
 
     </body>
