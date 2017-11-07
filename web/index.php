@@ -1,25 +1,32 @@
 <?php
 
-require('../vendor/autoload.php');
+require_once ‘include/config.php’;
+require_once ‘library/info.php’;
 
-$app = new Silex\Application();
-$app['debug'] = true;
+$bands = array(‘Dark Tranquillity’, ‘Stratovarius’, ‘Blind Guardian’, ‘In Flames’, ‘Metallica’);
 
-// Register the monolog logging service
-$app->register(new Silex\Provider\MonologServiceProvider(), array(
-  'monolog.logfile' => 'php://stderr',
-));
+?>
 
-// Register view rendering
-$app->register(new Silex\Provider\TwigServiceProvider(), array(
-    'twig.path' => __DIR__.'/views',
-));
-
-// Our web handlers
-
-$app->get('/', function() use($app) {
-  $app['monolog']->addDebug('logging output.');
-  return $app['twig']->render('index.twig');
-});
-
-$app->run();
+<html>
+    <head>
+        <title>Prova</title>
+    </head>
+    <body>
+        <h3>I miei gruppi preferiti</h3>
+        <ul>
+        <?php
+        $info = new InfoManager;
+        foreach($bands as $band_name)
+        {
+            $band_info = $info->findInfos($band);
+            echo “<li>”.$band_name;
+            if(!is_null($band_info))
+            {
+                echo ‘  (<a href=”‘.$band_info->site.'”>’.$band_info->site.'</a>)’;
+            }
+            echo “</li>”;
+        }
+        ?>
+        </ul>
+    </body>
+</html>
