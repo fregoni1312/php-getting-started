@@ -3,6 +3,6 @@
   <title>NO</title>
  </head>
  <body>
- <?php echo "No by Consuela<p>"; ?>
+ <p>No by Consuela</p>
  </body>
 </html>
