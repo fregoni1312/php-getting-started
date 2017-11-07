@@ -1,12 +1,8 @@
 <html>
-    <head>
-        <title>No</title>
-    </head>
-    <body>
-
-        <?php 
-            echo "No by consuela!"; 
-        ?>
-
-    </body>
+ <head>
+  <title>NO</title>
+ </head>
+ <body>
+ <?php echo "No by Consuela<p>"; ?>
+ </body>
 </html>
